@@ -34,7 +34,7 @@ document.addEventListener('keydown', function (e) {
 
 // ===== RESERVAS WHATSAPP =====
 function reservar() {
-  const telefono = '5214611234567'; // 👈 CAMBIA POR TU NÚMERO REAL
+  const telefono = '524661201326'; // 👈 CAMBIA POR TU NÚMERO REAL
 
   const mensaje = encodeURIComponent(
     'Hola 👋, me gustaría hacer una reservación.\n\n' +
@@ -49,3 +49,4 @@ function reservar() {
     '_blank'
   );
 }
+
