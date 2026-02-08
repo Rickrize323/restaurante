@@ -5,7 +5,7 @@
   <title>Menú Digital</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- CSS -->
+  <!-- CSS principal -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -17,76 +17,99 @@
     <p>Cocina con identidad · Salvatierra, Gto.</p>
   </header>
 
+  <!-- ===== SECCIÓN DE ESPECIALES ===== -->
   <section>
-  <h2 class="section-title">Especiales</h2>
+    <h2 class="section-title">Especiales</h2>
 
-  <div class="menu-grid">
+    <div class="menu-grid">
 
-    <div class="menu-item especial"
-      onclick="abrirModal(
-        'Platillo de Temporada',
-        'Disponible por tiempo limitado',
-        'Ingredientes frescos de temporada',
-        '$150 MXN'
-      )">
-      <span class="badge">Especial</span>
-      <img src="img/especial.jpg" alt="Especial">
-      <p class="item-name">Platillo de Temporada</p>
+      <!--
+        IMAGEN DEL PLATILLO ESPECIAL
+        - Guardar la imagen en /img
+        - Cambiar SOLO el nombre del archivo
+      -->
+      <div class="menu-item especial"
+        onclick="abrirModal(
+          'Platillo de Temporada',
+          'Disponible por tiempo limitado',
+          'Ingredientes frescos de temporada',
+          '$150 MXN'
+        )">
+
+        <span class="badge">Especial</span>
+
+        <!-- 👉 AQUÍ VA LA IMAGEN DEL PLATILLO ESPECIAL -->
+        <img src="img/burritos.jpg" alt="Platillo especial">
+
+        <p class="item-name">Platillo de Temporada</p>
+      </div>
+
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- ===== MENÚ GENERAL ===== -->
+  <section>
+    <h2 class="section-title">Menú</h2>
 
+    <div class="menu-grid">
 
-  <!-- ===== MENÚ ===== -->
- <section>
-  <h2 class="section-title">Menú</h2>
+      <!--
+        PLATILLO NORMAL
+        Duplica este bloque para agregar más platillos
+      -->
+      <div class="menu-item"
+        onclick="abrirModal(
+          'Nombre del Platillo',
+          'Descripción breve del platillo',
+          'Ingrediente 1, Ingrediente 2, Ingrediente 3',
+          '$180 MXN'
+        )">
 
-  <div class="menu-grid">
+        <!-- 👉 IMAGEN DEL PLATILLO -->
+        <!-- Guardar la foto en /img -->
+        <img src="img/enchiladas.jpg" alt="Nombre del Platillo">
 
-    <!-- PLATILLO -->
-    <div class="menu-item"
-      onclick="abrirModal(
-        'Nombre del Platillo',
-        'Descripción breve del platillo',
-        'Ingrediente 1, Ingrediente 2, Ingrediente 3',
-        '$180 MXN'
-      )">
+        <p class="item-name">Nombre del Platillo</p>
+      </div>
 
-      <img src="img/enchiladas.jpg" alt="Platillo">
-      <p class="item-name">Nombre del Platillo</p>
+      <!-- COPIA ESTE BLOQUE PARA MÁS PLATILLOS -->
+
     </div>
+  </section>
 
-    <!-- COPIA ESTE BLOQUE PARA MÁS PLATILLOS -->
-
+  <!-- ===== MODAL (NO LLEVA IMÁGENES) ===== -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <span class="close" onclick="cerrarModal()">×</span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <p><strong>Ingredientes:</strong></p>
+      <p id="modalIng"></p>
+      <p class="modal-price" id="modalPrice"></p>
+    </div>
   </div>
-</section>
 
-<!-- MODAL -->
-<div id="modal" class="modal hidden">
-  <div class="modal-box">
-    <span class="close" onclick="cerrarModal()">×</span>
-    <h3 id="modalTitle"></h3>
-    <p id="modalDesc"></p>
-    <p><strong>Ingredientes:</strong></p>
-    <p id="modalIng"></p>
-    <p class="modal-price" id="modalPrice"></p>
-  </div>
-</div>
+  <!-- ===== GALERÍA TIPO INSTAGRAM ===== -->
+  <section>
+    <h2 class="section-title">Momentos</h2>
 
-<section>
-  <h2 class="section-title">Momentos</h2>
+    <div class="gallery">
 
-  <div class="gallery">
-    <img src="img/galeria1.jpg" alt="Foto restaurante">
-    <img src="img/galeria2.jpg" alt="Platillo">
-    <img src="img/galeria3.jpg" alt="Ambiente">
-    <img src="img/galeria4.jpg" alt="Bebidas">
-    <!-- Agrega o quita imágenes libremente -->
-  </div>
-</section>
+      <!--
+        IMÁGENES DE GALERÍA
+        - Ambiente
+        - Platillos
+        - Bebidas
+        - Restaurante
+      -->
+      <img src="img/tacos.jpg" alt="Foto del restaurante">
+      <img src="img/tacos.jpg" alt="Platillo">
+      <img src="img/burritos.jpg" alt="Ambiente">
+      <img src="img/burritos.jpg" alt="Bebidas">
 
-
+      <!-- Puedes agregar o quitar imágenes sin problema -->
+    </div>
+  </section>
 
   <!-- ===== HISTORIA ===== -->
   <section>
@@ -101,7 +124,11 @@
   <section>
     <h2>Ubicación</h2>
     <div class="map">
-      <!-- Google Maps -->
+
+      <!--
+        NO ES UNA IMAGEN
+        Es un iframe de Google Maps
+      -->
       <iframe
         src="https://www.google.com/maps?q=Salvatierra%20Guanajuato&output=embed"
         loading="lazy">
